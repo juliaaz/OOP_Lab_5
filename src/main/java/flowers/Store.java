@@ -9,7 +9,6 @@ import java.util.ArrayList;
 @Getter @Setter
 public class Store{
     private int amount_flowers;
-
     private int amount_roses, amount_tulip, amount_chamomile;
     private List<Flower> assortment = new ArrayList<Flower>();
     public Store(){
@@ -59,7 +58,7 @@ public class Store{
     }
 
     public void search(int needed_price){
-        ArrayList<Flower> bucket_flowers = new ArrayList<Flower>();
+        List<Flower> bucket_flowers = new ArrayList<Flower>();
         int bucket_price = 0;
         FlowerBucket bucket = new FlowerBucket();
         while(bucket_price < needed_price){
@@ -86,6 +85,7 @@ public class Store{
         System.out.println("Number of Chamomiles: " + this.amount_chamomile);
         System.out.println("Here is your bucket:");
         System.out.println(bucket_flowers);
+//        return (Item) bucket_flowers;
     }
 
 }
