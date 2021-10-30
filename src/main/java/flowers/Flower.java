@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class Flower {
+public class Flower implements Item{
     private FlowerType flowerType;
     private double price;
     private double sepalLength;
@@ -21,5 +21,9 @@ public class Flower {
 
     public String toString(){
         return getFlowerType().name() + " " + this.color;
+    }
+
+    public String getDescription(){
+        return flowerType.toString();
     }
 }
