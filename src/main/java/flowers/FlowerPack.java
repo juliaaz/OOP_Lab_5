@@ -5,7 +5,11 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter @Setter @ToString
-public class FlowerPack {
+public class FlowerPack implements Item{
+    String descriptionStr = "";
+    public FlowerPack(){
+        this.descriptionStr = "";
+    }
     public Flower getFlower() {
         return flower;
     }
@@ -19,6 +23,7 @@ public class FlowerPack {
 
     public void setFlower(Flower flower) {
         this.flower = flower;
+        this.descriptionStr += flower.getDescription();
     }
 
     public void setAmount(int i) {
@@ -27,6 +32,10 @@ public class FlowerPack {
 
     public int getAmount() {
         return amount;
+    }
+
+    public String getDescription(){
+        return flower.toString();
     }
 }
 
